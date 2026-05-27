@@ -172,7 +172,7 @@ if(ENABLE_LIBC_TESTS OR ENABLE_COMPILER_RT_TESTS OR ENABLE_LIBCXX_TESTS)
         if(TEST_EXECUTOR STREQUAL qemu)
             set(picocrt "crt0-semihost")
         endif()
-        set(test_link_flags "-nostartfiles -l${picocrt} -lsemihost -T picolibcpp.ld")
+        set(test_link_flags "-fuse-ld=eld -nostartfiles -l${picocrt} -lsemihost -T picolibcpp.ld")
     else()
         message(FATAL_ERROR "Tests can only be enabled using picolibc.")
     endif()
@@ -723,7 +723,7 @@ if(ENABLE_CXX_LIBS)
                     --variant ${VARIANT}
                     --project libcxx
                     --libc ${C_LIBRARY}
-                    --output-arg ${libcxx_lit_xfails_path}
+                    --output-args ${libcxx_lit_xfails_path}
             )
             set(cxxlibs_test_cmake_options
                 -DLIBCXX_TEST_CONFIG=${CMAKE_CURRENT_SOURCE_DIR}/test-support/llvm-libc++-picolibc.cfg.in
