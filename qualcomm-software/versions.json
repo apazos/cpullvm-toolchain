@@ -24,7 +24,7 @@
     "eld": {
       "url": "https://github.com/qualcomm/eld",
       "tagType": "commithash",
-      "tag": "6c1c37f32017d852d54d44c24c0e7e6566c35082",
+      "tag": "c661b2ab573e7561c0d1b3f5a543a86729402ee8",
       "trackingBranch": "release/23.x"
     }
   }
