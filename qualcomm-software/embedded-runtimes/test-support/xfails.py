@@ -274,6 +274,7 @@ def main():
                 "riscv32imac_zba_zbb_ilp32_nopic",
                 "riscv32imac_zcb_zcmp_ilp32_nopic",
                 "riscv32imac_zcb_zcmp_zba_zbb_ilp32_nopic",
+                "riscv32ima_xqci_ilp32_nopic",
                 "riscv32imafc_ilp32f",
                 "riscv32imafc_zba_zbb_ilp32f",
                 "riscv32imafc_zcb_zcmp_zba_zbb_ilp32f",
@@ -382,6 +383,7 @@ def main():
                 "riscv32imac_zba_zbb_ilp32_nopic",
                 "riscv32imac_zcb_zcmp_ilp32_nopic",
                 "riscv32imac_zcb_zcmp_zba_zbb_ilp32_nopic",
+                "riscv32ima_xqci_ilp32_nopic",
                 "riscv32imafc_ilp32f",
                 "riscv32imafc_zba_zbb_ilp32f",
                 "riscv32imafc_zcb_zcmp_zba_zbb_ilp32f",
@@ -404,6 +406,7 @@ def main():
                 "riscv32imac_zba_zbb_ilp32_nopic",
                 "riscv32imac_zcb_zcmp_ilp32_nopic",
                 "riscv32imac_zcb_zcmp_zba_zbb_ilp32_nopic",
+                "riscv32ima_xqci_ilp32_nopic",
                 "riscv64imac_lp64_nopic",
             ],
             description="cmath.pass.cpp fails on soft-float builds where std::sqrt(long double) "
