@@ -29,7 +29,7 @@
     "eld": {
       "url": "https://github.com/qualcomm/eld",
       "tagType": "commithash",
-      "tag": "f51720df9c12c63778ef72a1e6a49f18a7dd3781",
+      "tag": "da7697a01dbe9a6d1be64be3b5569cc9d89dff48",
       "trackingBranch": "release/23.x_lto_linker_scripts"
     }
   }
