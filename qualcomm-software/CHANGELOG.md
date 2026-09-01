@@ -16,14 +16,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [23.1.0]
 
 ### Added
-- Enabled LLVM compiler-rt, picolibc and LLVM libc++ (libcxx, libcxxabi, libunwind) tests for all baremetal multilib variants for Arm, AArch64 and RISC-V 32-bit and 64-bit targets
+- Enabled LLVM compiler-rt, picolibc and LLVM libc++ (libcxx, libcxxabi, libunwind) tests for baremetal multilib variants for Arm, AArch64 and RISC-V 32-bit and 64-bit targets
 - Enabled Zephyr Twister tests for qemu_riscv32, qemu_riscv32_xip, qemu_riscv64, qemu_cortex_a53, qemu_cortex_m3 and qemu_cortex_a9 configurations
 - Added an armv7a vfpv3 hard-float multilib variant required by Zephyr qemu_cortex_a9 test configuration
 - Added Clang and LLVM development headers
 - Added support for additional picolibc versions as overlays
-- Added a picolibc v1.8.12 overlay, packaged separately from the toolchain release binary
-- Added the riscv32imaf_zve32f_zvfh_zba_zbb_ilp32f multilib variant for the SiFive X160
-- Added `-mtune=sifive-x160` flag to the riscv32imaf_zve32f_zvfh_zba_zbb_ilp32f multilib variant
+- Added a picolibc v1.8.12 overlay, packaged separately from the toolchain release
+- Added the riscv32imaf_zve32f_zvfh_zba_zbb_ilp32f multilib variant with `-mtune=sifive-x160` for the SiFive X160 core
 - Added aligned AArch64 multilib variants
 - Added a RISC-V 32-bit multilib variant combining Xqci, Atomics and Zinx extensions and built picolibc with thread support enabled
 - Enabled Xqccmt extension in the RISC-V 32-bit Xqci multilib variants
@@ -48,10 +47,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
   * Add optimized memset/memcpy/strcpy/strcmp in picolibc multilib variants with Xqci extension enabled
   * Added C runtime (CRT) start-up code support for the Zcmt and Xqccmt extensions in picolibc multilib variants
 - Switched to ELD's release/23.x_lto_linker_scripts branch with linker script support for LTO
-- Updated the toolchain’s default picolibc 1.8.10 version to align with Zephyr 4.4 and Zephyr SDK 1.0.0
+- Updated the toolchain’s default picolibc version to align with Zephyr 4.4 and Zephyr SDK 1.0.0 at [01254932](https://github.com/picolibc/picolibc/commit/01254932e8e81085817ed61fd858648584ffe37c) (between 1.8.10 and 1.8.11 versions)
 - Enforced a consistent TLS model across picolibc-based library builds to prevent undefined reference errors from unsupported dynamic TLS access
 - Fixed armv7a/armv8a multilib triple matching by adding thumbv8a-to-armv8a mappings and correcting multilib variant ordering
-- Explicitly require `-munaligned-access` on the compiler line for Arm and AArch64 multilib variants built with unaligned access support, preventing accidental use of -mno-unaligned-access
+- Explicitly require `-munaligned-access` on the compiler line to match Arm and AArch64 multilib variants built with unaligned access support, preventing accidental usage of unaligned variants when `-mno-unaligned-access` is specified
 - Added basic multilib selection tests for previously untested variants
 - Fixed triple matching for the armv8_soft_neon multilib variant
 - Included the documentation folder in the toolchain binary release
@@ -63,7 +62,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Documented the requirement to use QEMU system mode (qemu-system-<arch>) when building/testing multilib variants
 
 ### Removed
-- musl-embeded for Arm / AArch64 is deprecated and removed from the release binary; switch to picolibc
+- musl-embedded for Arm / AArch64 is deprecated and removed from the release; switch to picolibc
 
 ## [22.1.2]
 ### Fixed
